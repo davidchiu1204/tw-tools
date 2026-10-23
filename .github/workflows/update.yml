@@ -1,0 +1,74 @@
+name: 自動更新資料並部署
+
+on:
+  schedule:
+    # 每 4 小時執行一次（UTC 時間；台灣時間為 +8）
+    - cron: "17 */4 * * *"
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 抓取最新資料並產生網站
+        run: python scripts/build.py
+
+      - name: 儲存資料快取（data/）
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then
+            echo "資料沒有變化"
+          else
+            git commit -m "chore: 自動更新資料 $(TZ=Asia/Taipei date +'%Y-%m-%d %H:%M')"
+            git pull --rebase origin main
+            git push
+          fi
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  # 資料太久沒更新時讓這個步驟失敗，GitHub 會自動寄 email 通知你
+  freshness:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 檢查資料是否過舊
+        run: python scripts/build.py --check

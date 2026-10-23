@@ -1,0 +1,95 @@
+{
+ "periods": {
+  "11507": {
+   "key": "11507",
+   "roc_year": 115,
+   "m1": 7,
+   "m2": 8,
+   "special": "89996565",
+   "grand": "91098182",
+   "first": [
+    "54348835",
+    "44991397",
+    "06595111"
+   ],
+   "extra": [],
+   "source": "https://www.etax.nat.gov.tw/etw-main/ETW183W2_11507"
+  },
+  "11505": {
+   "key": "11505",
+   "roc_year": 115,
+   "m1": 5,
+   "m2": 6,
+   "special": "38548029",
+   "grand": "10138845",
+   "first": [
+    "24121106",
+    "28589937",
+    "83663333"
+   ],
+   "extra": [],
+   "source": "https://www.etax.nat.gov.tw/etw-main/ETW183W2_11505"
+  },
+  "11503": {
+   "key": "11503",
+   "roc_year": 115,
+   "m1": 3,
+   "m2": 4,
+   "special": "19531471",
+   "grand": "85941329",
+   "first": [
+    "07225810",
+    "20231230",
+    "83518781"
+   ],
+   "extra": [],
+   "source": "https://www.etax.nat.gov.tw/etw-main/ETW183W2_11503"
+  },
+  "11501": {
+   "key": "11501",
+   "roc_year": 115,
+   "m1": 1,
+   "m2": 2,
+   "special": "87510041",
+   "grand": "32220522",
+   "first": [
+    "21677046",
+    "44662410",
+    "31262513"
+   ],
+   "extra": [],
+   "source": "https://www.etax.nat.gov.tw/etw-main/ETW183W2_11501"
+  },
+  "11411": {
+   "key": "11411",
+   "roc_year": 114,
+   "m1": 11,
+   "m2": 12,
+   "special": "97023797",
+   "grand": "00507588",
+   "first": [
+    "92377231",
+    "05232592",
+    "78125249"
+   ],
+   "extra": [],
+   "source": "https://www.etax.nat.gov.tw/etw-main/ETW183W2_11411"
+  },
+  "11409": {
+   "key": "11409",
+   "roc_year": 114,
+   "m1": 9,
+   "m2": 10,
+   "special": "25834483",
+   "grand": "46587380",
+   "first": [
+    "41016094",
+    "98081574",
+    "07309261"
+   ],
+   "extra": [],
+   "source": "https://www.etax.nat.gov.tw/etw-main/ETW183W2_11409"
+  }
+ },
+ "updated": "2026-10-23T22:11:40.082837+08:00"
+}
