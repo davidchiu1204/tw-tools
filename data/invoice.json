@@ -89,7 +89,22 @@
    ],
    "extra": [],
    "source": "https://www.etax.nat.gov.tw/etw-main/ETW183W2_11409"
+  },
+  "11509": {
+   "key": "11509",
+   "roc_year": 115,
+   "m1": 9,
+   "m2": 10,
+   "special": "97606522",
+   "grand": "76160702",
+   "first": [
+    "02096005",
+    "28745017",
+    "76740352"
+   ],
+   "extra": [],
+   "source": "https://www.etax.nat.gov.tw/etw-main/ETW183W2_11509"
   }
  },
- "updated": "2026-11-25T11:33:12.701997+08:00"
+ "updated": "2026-11-25T22:24:13.676848+08:00"
 }
